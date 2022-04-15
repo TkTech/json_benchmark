@@ -1,12 +1,14 @@
 """
 Small utility script to check each library for compliance with the JSON
 minefield (https://github.com/nst/JSONTestSuite)
+
+When run, it will also update the summaries in the README.md.
 """
 import sys
 from datetime import datetime
 from pathlib import Path
 
-from humanmark import Fragment, Text, Header, Paragraph, dump
+from humanmark import Fragment, Text, Header, Paragraph, dump, load, HTMLBlock
 
 
 def do_yyjson(content):
@@ -108,6 +110,8 @@ def main(argv):
         ('ujson', do_ujson)
     ]
 
+    readme_summary = Fragment()
+
     for library, runner in runners:
         results = run_minefield(runner, tests)
 
@@ -144,6 +148,38 @@ def main(argv):
 
         with open(Path('minefield_reports') / f'{library}.md', 'w') as out:
             dump(fragment, out)
+
+        readme_summary.extend((
+            Header(3, children=[Text(library)]),
+            summary.unlink()
+        ))
+
+    with open('README.md') as src:
+        readme = load(src)
+
+        start = readme.find_one(
+            HTMLBlock,
+            f=lambda block: block.content == '<!-- start_correct_block -->\n'
+        )
+
+        end = readme.find_one(
+            HTMLBlock,
+            f=lambda block: block.content == '<!-- end_correct_block -->\n'
+        )
+
+        # Erase all the content between the open and closing blocks.
+        node = start.next
+        while node:
+            if node == end:
+                break
+
+            node = node.delete()
+
+        # Insert our summary blocks
+        start.append_sibling(readme_summary)
+
+    with open('README.md', 'w') as out:
+        dump(readme, out)
 
 
 if __name__ == '__main__':

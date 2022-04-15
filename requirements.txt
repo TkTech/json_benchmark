@@ -1,6 +1,6 @@
 attrs==21.4.0
 cysimdjson==21.11
-humanmark==0.4.1
+humanmark==0.5.1
 iniconfig==1.1.1
 markdown-it-py==2.0.1
 mdurl==0.1.1

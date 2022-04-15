@@ -1,0 +1,12 @@
+*.pyc
+*.pyd
+venv
+.eggs
+cython_debug/*
+build/
+_build/
+*.egg-info
+*.so
+dist/
+.idea
+.dcignore

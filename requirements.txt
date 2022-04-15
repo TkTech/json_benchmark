@@ -1,0 +1,19 @@
+attrs==21.4.0
+cysimdjson==21.11
+humanmark==0.4.1
+iniconfig==1.1.1
+markdown-it-py==2.0.1
+mdurl==0.1.1
+orjson==3.6.7
+packaging==21.3
+pluggy==1.0.0
+py==1.11.0
+py-cpuinfo==8.0.0
+pyparsing==3.0.8
+pysimdjson==4.0.3
+pytest==7.1.1
+pytest-benchmark==3.4.1
+python-rapidjson==1.6
+tomli==2.0.1
+ujson==5.2.0
+-e git+git@github.com:TkTech/py_yyjson.git@a628fdd23c318995fb4b70d88f64f79d29bd61b2#egg=yyjson

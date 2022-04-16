@@ -14,32 +14,54 @@ def main(argv):
 
     groups = {}
     for benchmark in j['benchmarks']:
-        groups.setdefault(benchmark['group'], []).append({
-            'name': benchmark['name'],
-            'min': benchmark['stats']['min'],
-            'max': benchmark['stats']['max'],
-            'mean': benchmark['stats']['mean']
-        })
+        groups.setdefault(benchmark['group'], []).append(benchmark)
 
     readme_summaries = Fragment()
     for group_name, result in groups.items():
-        result.sort(key=lambda v: v['min'])
+        result.sort(key=lambda v: v['stats']['min'])
 
         readme_summaries.extend((
             Header(3, children=[Text(group_name)]),
+        ))
+
+        row = result[0]
+        if 'file' in row['extra_info']:
+            readme_summaries.extend((
+                Paragraph(children=[
+                    Text(
+                        f'Sample file is {row["extra_info"]["file_size"]}'
+                        ' bytes.'
+                    )
+                ]),
+            ))
+
+        readme_summaries.extend((
             Paragraph(children=[
-                Text('| library | min (ms) | max (ms) | mean (ms) |\n'),
-                Text('| ------- | -------- | -------- | --------- |\n'),
+                Text(
+                    '| library '
+                    '| min (ms) '
+                    '| max (ms) '
+                    '| mean (ms) '
+                    '|\n'
+                ),
+                Text(
+                    '| ------- '
+                    '| -------- '
+                    '| -------- '
+                    '| --------- '
+                    '|\n'
+                ),
                 *(
                     Text(
-                        f'| {v["name"]} | {v["min"] * 1000:.4f} '
-                        f'| {v["max"] * 1000:.4f} '
-                        f'| {v["mean"] * 1000:.4f} '
+                        f'| {v["name"]} '
+                        f'| {v["stats"]["min"] * 1000:.4f} '
+                        f'| {v["stats"]["max"] * 1000:.4f} '
+                        f'| {v["stats"]["mean"] * 1000:.4f} '
                         f'|\n'
                     )
                     for v in result
                 )
-            ])
+            ]),
         ))
 
     with open('README.md') as src:

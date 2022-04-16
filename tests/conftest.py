@@ -4,7 +4,8 @@ import pytest
 @pytest.fixture(params=[
     'data/canada.json',
     'data/citm_catalog.json',
-    'data/twitter.json'
+    'data/twitter.json',
+    'data/verysmall.json'
 ], scope='module')
 def sample_json(request):
     # We pass in the complete file contents, because we don't want file IO

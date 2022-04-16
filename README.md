@@ -97,41 +97,62 @@ directory.
 
 ### Complete load of data/canada.json
 
+Sample file is 2251051 bytes.
+
 | library | min (ms) | max (ms) | mean (ms) |
 | ------- | -------- | -------- | --------- |
-| yyjson | 5.5502 | 11.1734 | 7.8658 |
-| cysimdjson | 5.7406 | 10.1619 | 7.9000 |
-| simdjson | 5.7926 | 11.0426 | 8.2046 |
-| orjson | 8.6017 | 15.0741 | 10.9376 |
-| ujson | 10.0394 | 18.2333 | 12.9458 |
-| json | 23.0770 | 28.5290 | 25.6070 |
-| rapidjson | 25.7855 | 30.5490 | 28.3270 |
+| yyjson | 5.2855 | 14.6124 | 9.5136 |
+| simdjson | 5.7374 | 14.3674 | 9.5140 |
+| cysimdjson | 5.9193 | 10.7559 | 8.2352 |
+| orjson | 8.4625 | 18.6653 | 11.8414 |
+| ujson | 10.1251 | 18.8607 | 14.3548 |
+| json | 23.1732 | 30.2110 | 26.2201 |
+| rapidjson | 25.4896 | 34.1050 | 29.1916 |
 
 
 ### Complete load of data/citm_catalog.json
 
+Sample file is 1727030 bytes.
+
 | library | min (ms) | max (ms) | mean (ms) |
 | ------- | -------- | -------- | --------- |
-| yyjson | 3.0866 | 7.6158 | 3.9602 |
-| simdjson | 3.0916 | 7.2800 | 3.9532 |
-| cysimdjson | 3.2248 | 8.3841 | 4.5691 |
-| orjson | 3.3885 | 7.4435 | 4.1514 |
-| ujson | 4.9711 | 9.5521 | 5.9318 |
-| rapidjson | 4.9867 | 9.2611 | 5.7957 |
-| json | 5.2141 | 10.6472 | 6.0939 |
+| simdjson | 3.0496 | 10.2288 | 4.5276 |
+| yyjson | 3.0725 | 12.9260 | 4.7278 |
+| cysimdjson | 3.2350 | 9.2566 | 4.6005 |
+| orjson | 3.2869 | 8.9607 | 4.3607 |
+| rapidjson | 4.8654 | 10.7684 | 6.0624 |
+| ujson | 4.9233 | 12.8696 | 6.5945 |
+| json | 5.2351 | 9.3376 | 6.1055 |
 
 
 ### Complete load of data/twitter.json
 
+Sample file is 567916 bytes.
+
 | library | min (ms) | max (ms) | mean (ms) |
 | ------- | -------- | -------- | --------- |
-| orjson | 1.2834 | 4.9193 | 1.3892 |
-| cysimdjson | 1.3942 | 5.7907 | 1.6209 |
-| simdjson | 1.4023 | 6.3474 | 1.5426 |
-| yyjson | 1.4180 | 5.7103 | 1.5323 |
-| rapidjson | 2.1790 | 6.4160 | 2.3069 |
-| ujson | 2.1874 | 6.5209 | 2.3623 |
-| json | 2.2601 | 6.0987 | 2.3854 |
+| orjson | 1.3714 | 6.0291 | 1.4893 |
+| yyjson | 1.3791 | 9.2868 | 1.5647 |
+| simdjson | 1.3860 | 8.8234 | 1.5560 |
+| cysimdjson | 1.3954 | 6.9549 | 1.6465 |
+| rapidjson | 2.1363 | 8.4668 | 2.2876 |
+| ujson | 2.2646 | 9.1984 | 2.4557 |
+| json | 2.2850 | 6.2415 | 2.3875 |
+
+
+### Complete load of data/verysmall.json
+
+Sample file is 7 bytes.
+
+| library | min (ms) | max (ms) | mean (ms) |
+| ------- | -------- | -------- | --------- |
+| orjson | 0.0002 | 0.0028 | 0.0002 |
+| ujson | 0.0002 | 0.0003 | 0.0002 |
+| yyjson | 0.0002 | 0.0007 | 0.0002 |
+| rapidjson | 0.0003 | 0.0009 | 0.0003 |
+| cysimdjson | 0.0004 | 0.0010 | 0.0004 |
+| simdjson | 0.0004 | 0.0011 | 0.0005 |
+| json | 0.0010 | 0.0115 | 0.0011 |
 
 
 <!-- end_performance_block -->
@@ -152,4 +173,11 @@ consistent state.
 
 x64 tests are run on an AMD Ryzen 7 5800X, capped at base clock speed with
 64GB of Corsair CMW32GX4M2E3200C16.
+
+### JSON is terrible, use X!
+
+This repository isn't for arguing the pros or cons of JSON versus some other
+exchange format. You frequently have no choice but to work with JSON, and if
+you can read or write responses 15% faster, that means you can handle more
+requests per second with the same hardware.
 

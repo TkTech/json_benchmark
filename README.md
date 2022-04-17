@@ -9,7 +9,14 @@ To run the tests yourself:
 git clone git@github.com:TkTech/json_benchmark.git && cd json_benchmark
 <setup a virtualenv using your tool of choice>
 pip install -r requirements.txt
-pytest
+pytest --benchmark-json benchmark.json
+```
+
+To update the tables in the README.md with the new results, just run:
+
+```
+python generate_benchmark_summaries.py
+python generate_minefield_reports.py
 ```
 
 ## Candidate Libraries
@@ -180,4 +187,3 @@ This repository isn't for arguing the pros or cons of JSON versus some other
 exchange format. You frequently have no choice but to work with JSON, and if
 you can read or write responses 15% faster, that means you can handle more
 requests per second with the same hardware.
-

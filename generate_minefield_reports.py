@@ -37,6 +37,11 @@ def do_simdjson(content):
     p.parse(content)
 
 
+def do_msgspec(content):
+    import msgspec
+    msgspec.json.decode(content.encode('utf-8'))
+
+
 def run_minefield(do_parse, tests):
     tally = {
         'expected_result': 0,
@@ -54,21 +59,13 @@ def run_minefield(do_parse, tests):
                 try:
                     do_parse(src.read())
                 except Exception:  # noqa
-                    match expected_result:
-                        case 'y':
-                            key = 'should_have_passed'
-                        case 'n':
-                            key = 'expected_result'
-                        case 'i':
-                            key = 'undefined_failed'
+                    key = {'y': 'should_have_passed',
+                           'n': 'expected_result',
+                           'i': 'undefined_failed'}[expected_result]
                 else:
-                    match expected_result:
-                        case 'y':
-                            key = 'expected_result'
-                        case 'n':
-                            key = 'should_have_failed'
-                        case 'i':
-                            key = 'undefined_passed'
+                    key = {'y': 'expected_result',
+                           'n': 'should_have_failed',
+                           'i': 'undefined_passed'}[expected_result]
 
                 results.append((expected_result, file, key))
                 tally[key] += 1
@@ -80,17 +77,11 @@ def run_minefield(do_parse, tests):
 
 
 def label(k) -> str:
-    match k:
-        case 'expected_result':
-            return '🎉 expected result'
-        case 'should_have_passed':
-            return '🔥 parsing should have succeeded but failed'
-        case 'should_have_failed':
-            return '🔥 parsing should have failed but succeeded'
-        case 'undefined_passed':
-            return '➕ result undefined, parsing succeeded'
-        case 'undefined_failed':
-            return '➖ result undefined, parsing failed'
+    return {'expected_result': '🎉 expected result',
+            'should_have_passed': '🔥 parsing should have succeeded but failed',
+            'should_have_failed': '🔥 parsing should have failed but succeeded',
+            'undefined_passed': '➕ result undefined, parsing succeeded',
+            'undefined_failed': '➖ result undefined, parsing failed'}[k]
 
 
 def main(argv):
@@ -107,7 +98,8 @@ def main(argv):
         ('rapidjson', do_rapidjson),
         ('orjson', do_orjson),
         ('simdjson', do_simdjson),
-        ('ujson', do_ujson)
+        ('ujson', do_ujson),
+        ('msgspec', do_msgspec),
     ]
 
     readme_summary = Fragment()

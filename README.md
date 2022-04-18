@@ -54,6 +54,7 @@ directory.
 | 6 | ➕ result undefined, parsing succeeded |
 | 29 | ➖ result undefined, parsing failed |
 
+
 ### rapidjson
 
 | count | result |
@@ -63,6 +64,7 @@ directory.
 | 0 | 🔥 parsing should have succeeded but failed |
 | 6 | ➕ result undefined, parsing succeeded |
 | 29 | ➖ result undefined, parsing failed |
+
 
 ### orjson
 
@@ -74,6 +76,7 @@ directory.
 | 5 | ➕ result undefined, parsing succeeded |
 | 30 | ➖ result undefined, parsing failed |
 
+
 ### simdjson
 
 | count | result |
@@ -84,6 +87,7 @@ directory.
 | 8 | ➕ result undefined, parsing succeeded |
 | 27 | ➖ result undefined, parsing failed |
 
+
 ### ujson
 
 | count | result |
@@ -93,6 +97,18 @@ directory.
 | 0 | 🔥 parsing should have succeeded but failed |
 | 16 | ➕ result undefined, parsing succeeded |
 | 19 | ➖ result undefined, parsing failed |
+
+
+### msgspec
+
+| count | result |
+| ----- | ------ |
+| 283 | 🎉 expected result |
+| 0 | 🔥 parsing should have failed but succeeded |
+| 0 | 🔥 parsing should have succeeded but failed |
+| 6 | ➕ result undefined, parsing succeeded |
+| 29 | ➖ result undefined, parsing failed |
+
 
 <!-- end_correct_block -->
 
@@ -108,14 +124,14 @@ Sample file is 2251051 bytes.
 
 | library | min (ms) | max (ms) | mean (ms) |
 | ------- | -------- | -------- | --------- |
-| yyjson | 5.2855 | 14.6124 | 9.5136 |
-| simdjson | 5.7374 | 14.3674 | 9.5140 |
-| cysimdjson | 5.9193 | 10.7559 | 8.2352 |
-| orjson | 8.4625 | 18.6653 | 11.8414 |
-| ujson | 10.1251 | 18.8607 | 14.3548 |
-| json | 23.1732 | 30.2110 | 26.2201 |
-| rapidjson | 25.4896 | 34.1050 | 29.1916 |
-
+| yyjson | 5.4603 | 13.5752 | 9.9340 |
+| msgspec | 5.7863 | 12.7752 | 8.8813 |
+| cysimdjson | 5.8038 | 10.5372 | 8.0821 |
+| simdjson | 5.8468 | 14.2203 | 10.0390 |
+| orjson | 8.5500 | 15.9159 | 11.9144 |
+| ujson | 9.8216 | 20.6018 | 14.2988 |
+| json | 23.6868 | 30.5128 | 26.8572 |
+| rapidjson | 25.6958 | 33.4925 | 29.4259 |
 
 ### Complete load of data/citm_catalog.json
 
@@ -123,14 +139,14 @@ Sample file is 1727030 bytes.
 
 | library | min (ms) | max (ms) | mean (ms) |
 | ------- | -------- | -------- | --------- |
-| simdjson | 3.0496 | 10.2288 | 4.5276 |
-| yyjson | 3.0725 | 12.9260 | 4.7278 |
-| cysimdjson | 3.2350 | 9.2566 | 4.6005 |
-| orjson | 3.2869 | 8.9607 | 4.3607 |
-| rapidjson | 4.8654 | 10.7684 | 6.0624 |
-| ujson | 4.9233 | 12.8696 | 6.5945 |
-| json | 5.2351 | 9.3376 | 6.1055 |
-
+| simdjson | 3.0281 | 10.9173 | 4.7469 |
+| yyjson | 3.1265 | 11.0829 | 4.8833 |
+| cysimdjson | 3.3061 | 8.4879 | 4.4922 |
+| orjson | 3.3289 | 11.3524 | 4.6075 |
+| msgspec | 3.6390 | 12.0191 | 4.9355 |
+| ujson | 4.9217 | 15.6031 | 6.7237 |
+| rapidjson | 4.9250 | 11.9337 | 6.2165 |
+| json | 5.3019 | 12.8375 | 6.3753 |
 
 ### Complete load of data/twitter.json
 
@@ -138,14 +154,14 @@ Sample file is 567916 bytes.
 
 | library | min (ms) | max (ms) | mean (ms) |
 | ------- | -------- | -------- | --------- |
-| orjson | 1.3714 | 6.0291 | 1.4893 |
-| yyjson | 1.3791 | 9.2868 | 1.5647 |
-| simdjson | 1.3860 | 8.8234 | 1.5560 |
-| cysimdjson | 1.3954 | 6.9549 | 1.6465 |
-| rapidjson | 2.1363 | 8.4668 | 2.2876 |
-| ujson | 2.2646 | 9.1984 | 2.4557 |
-| json | 2.2850 | 6.2415 | 2.3875 |
-
+| orjson | 1.3158 | 7.3897 | 1.4485 |
+| simdjson | 1.3640 | 9.9401 | 1.5521 |
+| cysimdjson | 1.3851 | 5.8494 | 1.5904 |
+| yyjson | 1.3990 | 8.8561 | 1.5849 |
+| msgspec | 1.6705 | 7.6091 | 1.8395 |
+| rapidjson | 2.1353 | 8.1012 | 2.2955 |
+| ujson | 2.2779 | 10.3709 | 2.4661 |
+| json | 2.2999 | 8.1822 | 2.4501 |
 
 ### Complete load of data/verysmall.json
 
@@ -153,14 +169,14 @@ Sample file is 7 bytes.
 
 | library | min (ms) | max (ms) | mean (ms) |
 | ------- | -------- | -------- | --------- |
-| orjson | 0.0002 | 0.0028 | 0.0002 |
+| msgspec | 0.0001 | 0.0002 | 0.0001 |
+| orjson | 0.0002 | 0.0031 | 0.0002 |
 | ujson | 0.0002 | 0.0003 | 0.0002 |
-| yyjson | 0.0002 | 0.0007 | 0.0002 |
-| rapidjson | 0.0003 | 0.0009 | 0.0003 |
-| cysimdjson | 0.0004 | 0.0010 | 0.0004 |
+| yyjson | 0.0002 | 0.0171 | 0.0002 |
+| rapidjson | 0.0003 | 0.0007 | 0.0003 |
+| cysimdjson | 0.0003 | 0.0014 | 0.0004 |
 | simdjson | 0.0004 | 0.0011 | 0.0005 |
-| json | 0.0010 | 0.0115 | 0.0011 |
-
+| json | 0.0010 | 0.0080 | 0.0011 |
 
 <!-- end_performance_block -->
 
@@ -187,3 +203,4 @@ This repository isn't for arguing the pros or cons of JSON versus some other
 exchange format. You frequently have no choice but to work with JSON, and if
 you can read or write responses 15% faster, that means you can handle more
 requests per second with the same hardware.
+

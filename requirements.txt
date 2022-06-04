@@ -17,4 +17,4 @@ python-rapidjson==1.6
 tomli==2.0.1
 ujson==5.2.0
 msgspec==0.6.0
--e git+git@github.com:TkTech/py_yyjson.git@a628fdd23c318995fb4b70d88f64f79d29bd61b2#egg=yyjson
+yyjson==0.3.1

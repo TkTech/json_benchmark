@@ -8,7 +8,8 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
-from humanmark import Fragment, Text, Header, Paragraph, dump, load, HTMLBlock
+from humanmark import Fragment, Text, Header, Paragraph, dump, load, HTMLBlock, \
+    Link
 
 
 def do_yyjson(content):
@@ -143,6 +144,16 @@ def main(argv):
 
         readme_summary.extend((
             Header(3, children=[Text(library)]),
+            Paragraph(children=[
+                Text('See full minefield results for '),
+                Link(
+                    f'minefield_reports/{library}.md',
+                    children=[
+                        Text(library)
+                    ]
+                ),
+                Text('.')
+            ]),
             summary.unlink()
         ))
 

@@ -46,16 +46,20 @@ directory.
 
 ### yyjson
 
+See full minefield results for [yyjson](minefield_reports/yyjson.md).
+
 | count | result |
 | ----- | ------ |
-| 283 | 🎉 expected result |
+| 188 | 🎉 expected result |
 | 0 | 🔥 parsing should have failed but succeeded |
-| 0 | 🔥 parsing should have succeeded but failed |
-| 6 | ➕ result undefined, parsing succeeded |
-| 29 | ➖ result undefined, parsing failed |
+| 95 | 🔥 parsing should have succeeded but failed |
+| 0 | ➕ result undefined, parsing succeeded |
+| 35 | ➖ result undefined, parsing failed |
 
 
 ### rapidjson
+
+See full minefield results for [rapidjson](minefield_reports/rapidjson.md).
 
 | count | result |
 | ----- | ------ |
@@ -68,6 +72,8 @@ directory.
 
 ### orjson
 
+See full minefield results for [orjson](minefield_reports/orjson.md).
+
 | count | result |
 | ----- | ------ |
 | 283 | 🎉 expected result |
@@ -78,6 +84,8 @@ directory.
 
 
 ### simdjson
+
+See full minefield results for [simdjson](minefield_reports/simdjson.md).
 
 | count | result |
 | ----- | ------ |
@@ -90,6 +98,8 @@ directory.
 
 ### ujson
 
+See full minefield results for [ujson](minefield_reports/ujson.md).
+
 | count | result |
 | ----- | ------ |
 | 257 | 🎉 expected result |
@@ -100,6 +110,8 @@ directory.
 
 
 ### msgspec
+
+See full minefield results for [msgspec](minefield_reports/msgspec.md).
 
 | count | result |
 | ----- | ------ |
@@ -115,6 +127,8 @@ directory.
 
 ## Performance
 
+In these benchmarks, lower is better.
+
 <!-- start_performance_block -->
 
 
@@ -122,61 +136,65 @@ directory.
 
 Sample file is 2251051 bytes.
 
+![](histograms/-Complete_load_of_data_canada.json.svg 'Histogram for Complete load of data/canada.json.')
+
 | library | min (ms) | max (ms) | mean (ms) |
 | ------- | -------- | -------- | --------- |
-| yyjson | 5.4603 | 13.5752 | 9.9340 |
-| msgspec | 5.7863 | 12.7752 | 8.8813 |
-| cysimdjson | 5.8038 | 10.5372 | 8.0821 |
-| simdjson | 5.8468 | 14.2203 | 10.0390 |
-| orjson | 8.5500 | 15.9159 | 11.9144 |
-| ujson | 9.8216 | 20.6018 | 14.2988 |
-| json | 23.6868 | 30.5128 | 26.8572 |
-| rapidjson | 25.6958 | 33.4925 | 29.4259 |
+| cysimdjson | 5.9546 | 19.6696 | 10.0383 |
+| msgspec | 5.9685 | 13.6818 | 9.4638 |
+| simdjson | 6.4427 | 16.3638 | 11.1386 |
+| orjson | 8.8252 | 16.7841 | 12.9363 |
+| ujson | 9.9651 | 20.9605 | 15.2025 |
+| json | 23.2570 | 30.3407 | 26.6418 |
+| rapidjson | 24.2579 | 34.2014 | 29.2245 |
 
 ### Complete load of data/citm_catalog.json
 
 Sample file is 1727030 bytes.
 
+![](histograms/-Complete_load_of_data_citm_catalog.json.svg 'Histogram for Complete load of data/citm_catalog.json.')
+
 | library | min (ms) | max (ms) | mean (ms) |
 | ------- | -------- | -------- | --------- |
-| simdjson | 3.0281 | 10.9173 | 4.7469 |
-| yyjson | 3.1265 | 11.0829 | 4.8833 |
-| cysimdjson | 3.3061 | 8.4879 | 4.4922 |
-| orjson | 3.3289 | 11.3524 | 4.6075 |
-| msgspec | 3.6390 | 12.0191 | 4.9355 |
-| ujson | 4.9217 | 15.6031 | 6.7237 |
-| rapidjson | 4.9250 | 11.9337 | 6.2165 |
-| json | 5.3019 | 12.8375 | 6.3753 |
+| simdjson | 3.2135 | 13.9585 | 5.2286 |
+| cysimdjson | 3.3827 | 14.9411 | 4.9769 |
+| orjson | 3.3990 | 10.9832 | 4.7538 |
+| msgspec | 3.6584 | 11.8673 | 5.1431 |
+| rapidjson | 4.9115 | 22.2681 | 6.7224 |
+| ujson | 4.9775 | 15.4578 | 7.2002 |
+| json | 5.3825 | 12.9017 | 6.5444 |
 
 ### Complete load of data/twitter.json
 
 Sample file is 567916 bytes.
 
+![](histograms/-Complete_load_of_data_twitter.json.svg 'Histogram for Complete load of data/twitter.json.')
+
 | library | min (ms) | max (ms) | mean (ms) |
 | ------- | -------- | -------- | --------- |
-| orjson | 1.3158 | 7.3897 | 1.4485 |
-| simdjson | 1.3640 | 9.9401 | 1.5521 |
-| cysimdjson | 1.3851 | 5.8494 | 1.5904 |
-| yyjson | 1.3990 | 8.8561 | 1.5849 |
-| msgspec | 1.6705 | 7.6091 | 1.8395 |
-| rapidjson | 2.1353 | 8.1012 | 2.2955 |
-| ujson | 2.2779 | 10.3709 | 2.4661 |
-| json | 2.2999 | 8.1822 | 2.4501 |
+| orjson | 1.3505 | 7.6621 | 1.5121 |
+| cysimdjson | 1.4218 | 7.0228 | 1.6907 |
+| simdjson | 1.4306 | 11.1500 | 1.6655 |
+| msgspec | 1.6621 | 8.3627 | 1.8380 |
+| rapidjson | 2.1523 | 10.7129 | 2.3530 |
+| ujson | 2.2734 | 12.6683 | 2.5384 |
+| json | 2.2749 | 7.9442 | 2.4402 |
 
 ### Complete load of data/verysmall.json
 
 Sample file is 7 bytes.
 
+![](histograms/-Complete_load_of_data_verysmall.json.svg 'Histogram for Complete load of data/verysmall.json.')
+
 | library | min (ms) | max (ms) | mean (ms) |
 | ------- | -------- | -------- | --------- |
-| msgspec | 0.0001 | 0.0002 | 0.0001 |
-| orjson | 0.0002 | 0.0031 | 0.0002 |
-| ujson | 0.0002 | 0.0003 | 0.0002 |
-| yyjson | 0.0002 | 0.0171 | 0.0002 |
+| msgspec | 0.0001 | 0.0005 | 0.0001 |
+| orjson | 0.0001 | 0.0003 | 0.0002 |
+| ujson | 0.0002 | 0.0042 | 0.0002 |
 | rapidjson | 0.0003 | 0.0007 | 0.0003 |
-| cysimdjson | 0.0003 | 0.0014 | 0.0004 |
-| simdjson | 0.0004 | 0.0011 | 0.0005 |
-| json | 0.0010 | 0.0080 | 0.0011 |
+| cysimdjson | 0.0004 | 0.0010 | 0.0004 |
+| simdjson | 0.0005 | 0.0185 | 0.0005 |
+| json | 0.0010 | 0.1977 | 0.0011 |
 
 <!-- end_performance_block -->
 

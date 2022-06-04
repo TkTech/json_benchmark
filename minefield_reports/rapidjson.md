@@ -1,6 +1,6 @@
 # Minefield results for rapidjson
 
-Generated 2022-04-18 16:40:51.906003.
+Generated 2022-06-02 14:04:44.284345.
 
 ## Summary
 

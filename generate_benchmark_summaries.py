@@ -5,7 +5,9 @@ them.
 import sys
 import json
 
-from humanmark import Fragment, load, HTMLBlock, Header, Text, Paragraph, dump
+from pytest_benchmark.utils import slugify
+from humanmark import Fragment, load, HTMLBlock, Header, Text, Paragraph, dump, \
+    Image
 
 
 def main(argv):
@@ -34,6 +36,17 @@ def main(argv):
                     )
                 ]),
             ))
+
+        readme_summaries.extend((
+            Paragraph(children=[
+                # Not sure why the CLI generates an extra prefixed '-' on
+                # the filename.
+                Image(
+                    f'histograms/-{slugify(group_name)}.svg',
+                    title=f'Histogram for {group_name}.'
+                )
+            ])
+        ))
 
         readme_summaries.extend((
             Paragraph(children=[

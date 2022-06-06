@@ -1,6 +1,6 @@
 # Minefield results for simdjson
 
-Generated 2022-06-02 14:04:44.295926.
+Generated 2022-06-06 00:41:01.371914.
 
 ## Summary
 

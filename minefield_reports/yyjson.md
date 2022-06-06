@@ -1,117 +1,117 @@
 # Minefield results for yyjson
 
-Generated 2022-06-02 14:04:44.245394.
+Generated 2022-06-06 00:41:01.303824.
 
 ## Summary
 
 | count | result |
 | ----- | ------ |
-| 188 | 🎉 expected result |
+| 283 | 🎉 expected result |
 | 0 | 🔥 parsing should have failed but succeeded |
-| 95 | 🔥 parsing should have succeeded but failed |
-| 0 | ➕ result undefined, parsing succeeded |
-| 35 | ➖ result undefined, parsing failed |
+| 0 | 🔥 parsing should have succeeded but failed |
+| 6 | ➕ result undefined, parsing succeeded |
+| 29 | ➖ result undefined, parsing failed |
 
 
 ### Complete Results
 
 | file | result |
 | ---- | ------ |
-| data/minefield/y_array_empty.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_number_int_with_exp.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_array_false.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_structure_string_empty.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_object_with_newlines.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_number_negative_int.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_number_simple_int.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_number_minus_zero.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_simple_ascii.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_object_simple.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_number_negative_one.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_structure_trailing_newline.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_object.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_pi.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_nonCharacterInUTF-8_U+10FFFF.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_utf8.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_structure_lonely_int.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_structure_lonely_string.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_array_with_1_and_newline.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_object_escaped_null_in_key.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_double_escape_n.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_unicode_U+200B_ZERO_WIDTH_SPACE.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_with_del_character.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_unicode_U+1FFFE_nonchar.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_array_arraysWithSpaces.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_unicode_U+FFFE_nonchar.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_structure_lonely_false.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_three-byte-utf-8.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_double_escape_a.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_number_after_space.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_1_2_3_bytes_UTF-8_sequences.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_array_heterogeneous.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_escaped_noncharacter.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_object_long_strings.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_null_escape.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_reservedCharacterInUTF-8_U+1BFFF.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_unicodeEscapedBackslash.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_array_with_several_null.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_nonCharacterInUTF-8_U+FFFF.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_uEscape.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_number_0e+1.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_unicode_U+FDD0_nonchar.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_number_double_close_to_zero.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_number_real_fraction_exponent.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_unescaped_char_delete.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_one-byte-utf-8.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_backslash_doublequotes.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_array_with_trailing_space.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_number_real_capital_e.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_structure_lonely_negative_real.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_in_array_with_leading_space.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_object_string_unicode.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_unicode_U+10FFFE_nonchar.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_number_real_pos_exponent.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_nbsp_uescaped.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_number_real_neg_exp.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_object_basic.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_u+2029_par_sep.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_comments.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_structure_lonely_null.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_space.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_array_empty-string.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_unicode_escaped_double_quote.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_uescaped_newline.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_array_with_leading_space.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_object_empty.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_accepted_surrogate_pair.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_object_duplicated_key.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_object_extreme_numbers.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_structure_true_in_array.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_object_duplicated_key_and_value.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_structure_lonely_true.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_two-byte-utf-8.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_allowed_escapes.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_array_ending_with_newline.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_object_empty_key.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_number_negative_zero.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_unicode_2.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_array_null.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_escaped_control_character.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_number_real_capital_e_neg_exp.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_surrogates_U+1D11E_MUSICAL_SYMBOL_G_CLEF.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_number_simple_real.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_unicode.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_accepted_surrogate_pairs.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_number_real_exponent.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_number_0e1.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_in_array.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_number_real_capital_e_pos_exp.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_last_surrogates_1_and_2.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_unicode_U+2064_invisible_plus.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_backslash_and_u_escaped_zero.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_number.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_structure_whitespace_array.json | 🔥 parsing should have succeeded but failed |
-| data/minefield/y_string_u+2028_line_sep.json | 🔥 parsing should have succeeded but failed |
+| data/minefield/y_array_empty.json | 🎉 expected result |
+| data/minefield/y_number_int_with_exp.json | 🎉 expected result |
+| data/minefield/y_array_false.json | 🎉 expected result |
+| data/minefield/y_structure_string_empty.json | 🎉 expected result |
+| data/minefield/y_object_with_newlines.json | 🎉 expected result |
+| data/minefield/y_number_negative_int.json | 🎉 expected result |
+| data/minefield/y_number_simple_int.json | 🎉 expected result |
+| data/minefield/y_number_minus_zero.json | 🎉 expected result |
+| data/minefield/y_string_simple_ascii.json | 🎉 expected result |
+| data/minefield/y_object_simple.json | 🎉 expected result |
+| data/minefield/y_number_negative_one.json | 🎉 expected result |
+| data/minefield/y_structure_trailing_newline.json | 🎉 expected result |
+| data/minefield/y_object.json | 🎉 expected result |
+| data/minefield/y_string_pi.json | 🎉 expected result |
+| data/minefield/y_string_nonCharacterInUTF-8_U+10FFFF.json | 🎉 expected result |
+| data/minefield/y_string_utf8.json | 🎉 expected result |
+| data/minefield/y_structure_lonely_int.json | 🎉 expected result |
+| data/minefield/y_structure_lonely_string.json | 🎉 expected result |
+| data/minefield/y_array_with_1_and_newline.json | 🎉 expected result |
+| data/minefield/y_object_escaped_null_in_key.json | 🎉 expected result |
+| data/minefield/y_string_double_escape_n.json | 🎉 expected result |
+| data/minefield/y_string_unicode_U+200B_ZERO_WIDTH_SPACE.json | 🎉 expected result |
+| data/minefield/y_string_with_del_character.json | 🎉 expected result |
+| data/minefield/y_string_unicode_U+1FFFE_nonchar.json | 🎉 expected result |
+| data/minefield/y_array_arraysWithSpaces.json | 🎉 expected result |
+| data/minefield/y_string_unicode_U+FFFE_nonchar.json | 🎉 expected result |
+| data/minefield/y_structure_lonely_false.json | 🎉 expected result |
+| data/minefield/y_string_three-byte-utf-8.json | 🎉 expected result |
+| data/minefield/y_string_double_escape_a.json | 🎉 expected result |
+| data/minefield/y_number_after_space.json | 🎉 expected result |
+| data/minefield/y_string_1_2_3_bytes_UTF-8_sequences.json | 🎉 expected result |
+| data/minefield/y_array_heterogeneous.json | 🎉 expected result |
+| data/minefield/y_string_escaped_noncharacter.json | 🎉 expected result |
+| data/minefield/y_object_long_strings.json | 🎉 expected result |
+| data/minefield/y_string_null_escape.json | 🎉 expected result |
+| data/minefield/y_string_reservedCharacterInUTF-8_U+1BFFF.json | 🎉 expected result |
+| data/minefield/y_string_unicodeEscapedBackslash.json | 🎉 expected result |
+| data/minefield/y_array_with_several_null.json | 🎉 expected result |
+| data/minefield/y_string_nonCharacterInUTF-8_U+FFFF.json | 🎉 expected result |
+| data/minefield/y_string_uEscape.json | 🎉 expected result |
+| data/minefield/y_number_0e+1.json | 🎉 expected result |
+| data/minefield/y_string_unicode_U+FDD0_nonchar.json | 🎉 expected result |
+| data/minefield/y_number_double_close_to_zero.json | 🎉 expected result |
+| data/minefield/y_number_real_fraction_exponent.json | 🎉 expected result |
+| data/minefield/y_string_unescaped_char_delete.json | 🎉 expected result |
+| data/minefield/y_string_one-byte-utf-8.json | 🎉 expected result |
+| data/minefield/y_string_backslash_doublequotes.json | 🎉 expected result |
+| data/minefield/y_array_with_trailing_space.json | 🎉 expected result |
+| data/minefield/y_number_real_capital_e.json | 🎉 expected result |
+| data/minefield/y_structure_lonely_negative_real.json | 🎉 expected result |
+| data/minefield/y_string_in_array_with_leading_space.json | 🎉 expected result |
+| data/minefield/y_object_string_unicode.json | 🎉 expected result |
+| data/minefield/y_string_unicode_U+10FFFE_nonchar.json | 🎉 expected result |
+| data/minefield/y_number_real_pos_exponent.json | 🎉 expected result |
+| data/minefield/y_string_nbsp_uescaped.json | 🎉 expected result |
+| data/minefield/y_number_real_neg_exp.json | 🎉 expected result |
+| data/minefield/y_object_basic.json | 🎉 expected result |
+| data/minefield/y_string_u+2029_par_sep.json | 🎉 expected result |
+| data/minefield/y_string_comments.json | 🎉 expected result |
+| data/minefield/y_structure_lonely_null.json | 🎉 expected result |
+| data/minefield/y_string_space.json | 🎉 expected result |
+| data/minefield/y_array_empty-string.json | 🎉 expected result |
+| data/minefield/y_string_unicode_escaped_double_quote.json | 🎉 expected result |
+| data/minefield/y_string_uescaped_newline.json | 🎉 expected result |
+| data/minefield/y_array_with_leading_space.json | 🎉 expected result |
+| data/minefield/y_object_empty.json | 🎉 expected result |
+| data/minefield/y_string_accepted_surrogate_pair.json | 🎉 expected result |
+| data/minefield/y_object_duplicated_key.json | 🎉 expected result |
+| data/minefield/y_object_extreme_numbers.json | 🎉 expected result |
+| data/minefield/y_structure_true_in_array.json | 🎉 expected result |
+| data/minefield/y_object_duplicated_key_and_value.json | 🎉 expected result |
+| data/minefield/y_structure_lonely_true.json | 🎉 expected result |
+| data/minefield/y_string_two-byte-utf-8.json | 🎉 expected result |
+| data/minefield/y_string_allowed_escapes.json | 🎉 expected result |
+| data/minefield/y_array_ending_with_newline.json | 🎉 expected result |
+| data/minefield/y_object_empty_key.json | 🎉 expected result |
+| data/minefield/y_number_negative_zero.json | 🎉 expected result |
+| data/minefield/y_string_unicode_2.json | 🎉 expected result |
+| data/minefield/y_array_null.json | 🎉 expected result |
+| data/minefield/y_string_escaped_control_character.json | 🎉 expected result |
+| data/minefield/y_number_real_capital_e_neg_exp.json | 🎉 expected result |
+| data/minefield/y_string_surrogates_U+1D11E_MUSICAL_SYMBOL_G_CLEF.json | 🎉 expected result |
+| data/minefield/y_number_simple_real.json | 🎉 expected result |
+| data/minefield/y_string_unicode.json | 🎉 expected result |
+| data/minefield/y_string_accepted_surrogate_pairs.json | 🎉 expected result |
+| data/minefield/y_number_real_exponent.json | 🎉 expected result |
+| data/minefield/y_number_0e1.json | 🎉 expected result |
+| data/minefield/y_string_in_array.json | 🎉 expected result |
+| data/minefield/y_number_real_capital_e_pos_exp.json | 🎉 expected result |
+| data/minefield/y_string_last_surrogates_1_and_2.json | 🎉 expected result |
+| data/minefield/y_string_unicode_U+2064_invisible_plus.json | 🎉 expected result |
+| data/minefield/y_string_backslash_and_u_escaped_zero.json | 🎉 expected result |
+| data/minefield/y_number.json | 🎉 expected result |
+| data/minefield/y_structure_whitespace_array.json | 🎉 expected result |
+| data/minefield/y_string_u+2028_line_sep.json | 🎉 expected result |
 | data/minefield/n_number_0_capital_E.json | 🎉 expected result |
 | data/minefield/n_array_incomplete.json | 🎉 expected result |
 | data/minefield/n_structure_open_object_comma.json | 🎉 expected result |
@@ -314,8 +314,8 @@ Generated 2022-06-02 14:04:44.245394.
 | data/minefield/i_string_incomplete_surrogate_pair.json | ➖ result undefined, parsing failed |
 | data/minefield/i_string_UTF-8_invalid_sequence.json | ➖ result undefined, parsing failed |
 | data/minefield/i_string_utf16LE_no_BOM.json | ➖ result undefined, parsing failed |
-| data/minefield/i_number_double_huge_neg_exp.json | ➖ result undefined, parsing failed |
-| data/minefield/i_structure_500_nested_arrays.json | ➖ result undefined, parsing failed |
+| data/minefield/i_number_double_huge_neg_exp.json | ➕ result undefined, parsing succeeded |
+| data/minefield/i_structure_500_nested_arrays.json | ➕ result undefined, parsing succeeded |
 | data/minefield/i_structure_UTF-8_BOM_empty_object.json | ➖ result undefined, parsing failed |
 | data/minefield/i_string_incomplete_surrogates_escape_valid.json | ➖ result undefined, parsing failed |
 | data/minefield/i_string_UTF8_surrogate_U+D800.json | ➖ result undefined, parsing failed |
@@ -325,13 +325,13 @@ Generated 2022-06-02 14:04:44.245394.
 | data/minefield/i_string_not_in_unicode_range.json | ➖ result undefined, parsing failed |
 | data/minefield/i_string_inverted_surrogates_U+1D11E.json | ➖ result undefined, parsing failed |
 | data/minefield/i_string_invalid_surrogate.json | ➖ result undefined, parsing failed |
-| data/minefield/i_number_very_big_negative_int.json | ➖ result undefined, parsing failed |
+| data/minefield/i_number_very_big_negative_int.json | ➕ result undefined, parsing succeeded |
 | data/minefield/i_number_real_neg_overflow.json | ➖ result undefined, parsing failed |
-| data/minefield/i_number_too_big_pos_int.json | ➖ result undefined, parsing failed |
-| data/minefield/i_number_real_underflow.json | ➖ result undefined, parsing failed |
+| data/minefield/i_number_too_big_pos_int.json | ➕ result undefined, parsing succeeded |
+| data/minefield/i_number_real_underflow.json | ➕ result undefined, parsing succeeded |
 | data/minefield/i_string_overlong_sequence_2_bytes.json | ➖ result undefined, parsing failed |
 | data/minefield/i_string_invalid_lonely_surrogate.json | ➖ result undefined, parsing failed |
-| data/minefield/i_number_too_big_neg_int.json | ➖ result undefined, parsing failed |
+| data/minefield/i_number_too_big_neg_int.json | ➕ result undefined, parsing succeeded |
 | data/minefield/i_string_UTF-16LE_with_BOM.json | ➖ result undefined, parsing failed |
 | data/minefield/i_string_1st_valid_surrogate_2nd_invalid.json | ➖ result undefined, parsing failed |
 | data/minefield/i_number_pos_double_huge_exp.json | ➖ result undefined, parsing failed |

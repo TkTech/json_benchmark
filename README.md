@@ -50,11 +50,12 @@ See full minefield results for [yyjson](minefield_reports/yyjson.md).
 
 | count | result |
 | ----- | ------ |
-| 188 | 🎉 expected result |
+| 283 | 🎉 expected result |
 | 0 | 🔥 parsing should have failed but succeeded |
-| 95 | 🔥 parsing should have succeeded but failed |
-| 0 | ➕ result undefined, parsing succeeded |
-| 35 | ➖ result undefined, parsing failed |
+| 0 | 🔥 parsing should have succeeded but failed |
+| 6 | ➕ result undefined, parsing succeeded |
+| 29 | ➖ result undefined, parsing failed |
+
 
 ### rapidjson
 
@@ -68,6 +69,7 @@ See full minefield results for [rapidjson](minefield_reports/rapidjson.md).
 | 6 | ➕ result undefined, parsing succeeded |
 | 29 | ➖ result undefined, parsing failed |
 
+
 ### orjson
 
 See full minefield results for [orjson](minefield_reports/orjson.md).
@@ -79,6 +81,7 @@ See full minefield results for [orjson](minefield_reports/orjson.md).
 | 0 | 🔥 parsing should have succeeded but failed |
 | 5 | ➕ result undefined, parsing succeeded |
 | 30 | ➖ result undefined, parsing failed |
+
 
 ### simdjson
 
@@ -92,6 +95,7 @@ See full minefield results for [simdjson](minefield_reports/simdjson.md).
 | 8 | ➕ result undefined, parsing succeeded |
 | 27 | ➖ result undefined, parsing failed |
 
+
 ### ujson
 
 See full minefield results for [ujson](minefield_reports/ujson.md).
@@ -104,6 +108,7 @@ See full minefield results for [ujson](minefield_reports/ujson.md).
 | 16 | ➕ result undefined, parsing succeeded |
 | 19 | ➖ result undefined, parsing failed |
 
+
 ### msgspec
 
 See full minefield results for [msgspec](minefield_reports/msgspec.md).
@@ -115,6 +120,7 @@ See full minefield results for [msgspec](minefield_reports/msgspec.md).
 | 0 | 🔥 parsing should have succeeded but failed |
 | 6 | ➕ result undefined, parsing succeeded |
 | 29 | ➖ result undefined, parsing failed |
+
 
 <!-- end_correct_block -->
 
@@ -143,7 +149,6 @@ Sample file is 2251051 bytes.
 | json | 23.7460 | 40.3626 | 29.9333 |
 | rapidjson | 25.1285 | 44.9850 | 34.1460 |
 
-
 ### Complete load of data/citm_catalog.json
 
 Sample file is 1727030 bytes.
@@ -160,7 +165,6 @@ Sample file is 1727030 bytes.
 | ujson | 4.8042 | 28.5217 | 9.7305 |
 | rapidjson | 4.9504 | 26.5347 | 8.7840 |
 | json | 5.3869 | 25.1608 | 8.2204 |
-
 
 ### Complete load of data/twitter.json
 
@@ -179,7 +183,6 @@ Sample file is 567916 bytes.
 | ujson | 2.2946 | 23.4167 | 2.8156 |
 | json | 2.3422 | 16.9511 | 2.6148 |
 
-
 ### Complete load of data/verysmall.json
 
 Sample file is 7 bytes.
@@ -197,7 +200,6 @@ Sample file is 7 bytes.
 | simdjson | 0.0005 | 0.0035 | 0.0006 |
 | json | 0.0011 | 0.0054 | 0.0012 |
 
-
 ### Merge Patch
 
 ![](histograms/-Merge_Patch.svg 'Histogram for Merge Patch.')
@@ -206,7 +208,6 @@ Sample file is 7 bytes.
 | ------- | -------- | -------- | --------- |
 | yyjson | 0.0003 | 0.0017 | 0.0003 |
 | json_merge_patch | 0.0006 | 0.0085 | 0.0006 |
-
 
 <!-- end_performance_block -->
 

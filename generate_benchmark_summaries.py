@@ -4,10 +4,11 @@ them.
 """
 import sys
 import json
+from datetime import datetime
 
 from pytest_benchmark.utils import slugify
 from humanmark import Fragment, load, HTMLBlock, Header, Text, Paragraph, dump, \
-    Image
+    Image, BlockQuote
 
 
 def main(argv):
@@ -101,6 +102,38 @@ def main(argv):
         node = node.delete()
 
     start.append_sibling(readme_summaries)
+
+    start = readme.find_one(
+        HTMLBlock,
+        f=lambda block: block.content == (
+            '<!-- start_last_updated_block -->\n'
+        )
+    )
+
+    end = readme.find_one(
+        HTMLBlock,
+        f=lambda block: block.content == (
+            '<!-- end_last_updated_block -->\n'
+        )
+    )
+
+    node = start.next
+    while node:
+        if node == end:
+            break
+
+        node = node.delete()
+
+    start.append_sibling(
+        Fragment(children=[
+            BlockQuote(children=[
+                Text(
+                    ':grey_exclamation: Benchmarks regenerated on '
+                    f'{datetime.utcnow().strftime("%Y-%m-%d")}'
+                )
+            ])
+        ])
+    )
 
     with open('README.md', 'w') as out:
         dump(readme, out)

@@ -1,6 +1,6 @@
 # Minefield results for orjson
 
-Generated 2022-06-06 00:41:01.366912.
+Generated 2022-08-07 18:52:01.617401.
 
 ## Summary
 
@@ -9,8 +9,8 @@ Generated 2022-06-06 00:41:01.366912.
 | 283 | 🎉 expected result |
 | 0 | 🔥 parsing should have failed but succeeded |
 | 0 | 🔥 parsing should have succeeded but failed |
-| 5 | ➕ result undefined, parsing succeeded |
-| 30 | ➖ result undefined, parsing failed |
+| 6 | ➕ result undefined, parsing succeeded |
+| 29 | ➖ result undefined, parsing failed |
 
 
 ### Complete Results
@@ -315,7 +315,7 @@ Generated 2022-06-06 00:41:01.366912.
 | data/minefield/i_string_UTF-8_invalid_sequence.json | ➖ result undefined, parsing failed |
 | data/minefield/i_string_utf16LE_no_BOM.json | ➖ result undefined, parsing failed |
 | data/minefield/i_number_double_huge_neg_exp.json | ➕ result undefined, parsing succeeded |
-| data/minefield/i_structure_500_nested_arrays.json | ➖ result undefined, parsing failed |
+| data/minefield/i_structure_500_nested_arrays.json | ➕ result undefined, parsing succeeded |
 | data/minefield/i_structure_UTF-8_BOM_empty_object.json | ➖ result undefined, parsing failed |
 | data/minefield/i_string_incomplete_surrogates_escape_valid.json | ➖ result undefined, parsing failed |
 | data/minefield/i_string_UTF8_surrogate_U+D800.json | ➖ result undefined, parsing failed |

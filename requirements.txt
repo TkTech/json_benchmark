@@ -4,7 +4,7 @@ humanmark==0.5.1
 iniconfig==1.1.1
 markdown-it-py==2.0.1
 mdurl==0.1.1
-orjson==3.6.7
+orjson==3.7.11
 packaging==21.3
 pluggy==1.0.0
 py==1.11.0

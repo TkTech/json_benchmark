@@ -4,7 +4,7 @@ parser = pytest.importorskip('yyjson')
 
 
 def parse_document(_, content):
-    parser.Document(content).as_obj  # noqa
+    parser.loads(content)
 
 
 def test_full_document_read(benchmark, sample_json):
@@ -20,7 +20,7 @@ def test_full_document_read(benchmark, sample_json):
 
 
 def merge_patch(patch, document):
-    document.merge_patch(patch)
+    document.patch(patch, use_merge_patch=True)
 
 
 def test_merge_patch(benchmark):

@@ -3,7 +3,7 @@
 <!-- start_last_updated_block -->
 
 
-> :grey_exclamation: Benchmarks regenerated on 2022-08-07
+> :grey_exclamation: Benchmarks regenerated on 2023-09-05
 
 <!-- end_last_updated_block -->
 
@@ -16,7 +16,7 @@ To run the tests yourself:
 ```bash
 git clone git@github.com:TkTech/json_benchmark.git && cd json_benchmark
 <setup a virtualenv using your tool of choice>
-pip install -r requirements.txt
+poetry install
 pytest --benchmark-json benchmark.json
 ```
 
@@ -34,17 +34,18 @@ to request or add new libraries.
 
 | Library    | Reader | Writer | Version |
 |------------|--------|--------|---------|
-| simdjson   | Yes    | No     | 4.0.3   |
-| cysimdjson | Yes    | No     | 21.11   |
-| yyjson     | Yes    | Yes    | 1.0.0   |
-| orjson     | Yes    | Yes    | 3.7.11  |
-| rapidjson  | Yes    | Yes    | 1.6     |
-| ujson      | Yes    | Yes    | 5.2.0   |
-| json       | Yes    | Yes    | 3.10    |
-| msgspec    | Yes    | Yes    | 0.7.0   |
+| simdjson   | Yes    | No     | 6.0.0   |
+| cysimdjson | Yes    | No     | 23.9    |
+| yyjson     | Yes    | Yes    | 2.3.1   |
+| orjson     | Yes    | Yes    | 3.9.5   |
+| rapidjson  | Yes    | Yes    | 1.10    |
+| ujson      | Yes    | Yes    | 5.8.0   |
+| json       | Yes    | Yes    | 3.11    |
+| msgspec    | Yes    | Yes    | 0.18.2  |
 
 ## Correctness
 
+cd
 It doesn't matter how fast a JSON parser is if it's not going to give you the
 correct results. We run the JSON minefield against each library. To see the
 complete line-by-line results, see the <minefield_reports/>
@@ -65,6 +66,7 @@ See full minefield results for [yyjson](minefield_reports/yyjson.md).
 | 6 | ➕ result undefined, parsing succeeded |
 | 29 | ➖ result undefined, parsing failed |
 
+
 ### rapidjson
 
 See full minefield results for [rapidjson](minefield_reports/rapidjson.md).
@@ -76,6 +78,7 @@ See full minefield results for [rapidjson](minefield_reports/rapidjson.md).
 | 0 | 🔥 parsing should have succeeded but failed |
 | 6 | ➕ result undefined, parsing succeeded |
 | 29 | ➖ result undefined, parsing failed |
+
 
 ### orjson
 
@@ -89,6 +92,7 @@ See full minefield results for [orjson](minefield_reports/orjson.md).
 | 6 | ➕ result undefined, parsing succeeded |
 | 29 | ➖ result undefined, parsing failed |
 
+
 ### simdjson
 
 See full minefield results for [simdjson](minefield_reports/simdjson.md).
@@ -98,8 +102,9 @@ See full minefield results for [simdjson](minefield_reports/simdjson.md).
 | 283 | 🎉 expected result |
 | 0 | 🔥 parsing should have failed but succeeded |
 | 0 | 🔥 parsing should have succeeded but failed |
-| 8 | ➕ result undefined, parsing succeeded |
-| 27 | ➖ result undefined, parsing failed |
+| 3 | ➕ result undefined, parsing succeeded |
+| 32 | ➖ result undefined, parsing failed |
+
 
 ### ujson
 
@@ -107,11 +112,12 @@ See full minefield results for [ujson](minefield_reports/ujson.md).
 
 | count | result |
 | ----- | ------ |
-| 257 | 🎉 expected result |
-| 26 | 🔥 parsing should have failed but succeeded |
+| 267 | 🎉 expected result |
+| 16 | 🔥 parsing should have failed but succeeded |
 | 0 | 🔥 parsing should have succeeded but failed |
-| 16 | ➕ result undefined, parsing succeeded |
-| 19 | ➖ result undefined, parsing failed |
+| 21 | ➕ result undefined, parsing succeeded |
+| 14 | ➖ result undefined, parsing failed |
+
 
 ### msgspec
 
@@ -124,6 +130,7 @@ See full minefield results for [msgspec](minefield_reports/msgspec.md).
 | 0 | 🔥 parsing should have succeeded but failed |
 | 6 | ➕ result undefined, parsing succeeded |
 | 29 | ➖ result undefined, parsing failed |
+
 
 <!-- end_correct_block -->
 
@@ -143,51 +150,48 @@ Sample file is 2251051 bytes.
 
 | library | min (ms) | max (ms) | mean (ms) |
 | ------- | -------- | -------- | --------- |
-| cysimdjson | 5.6900 | 11.0865 | 8.2301 |
-| simdjson | 5.9691 | 18.1188 | 12.9032 |
-| msgspec | 6.2665 | 14.6609 | 9.8614 |
-| orjson | 7.4561 | 17.3678 | 11.7010 |
-| yyjson | 7.9872 | 19.1369 | 13.8361 |
-| ujson | 9.9928 | 20.4961 | 15.0385 |
-| json | 23.1498 | 35.7078 | 31.5420 |
-| rapidjson | 23.7818 | 34.4833 | 28.8178 |
-
+| orjson | 4.9561 | 16.6607 | 10.0456 |
+| msgspec | 5.7846 | 16.6313 | 10.4164 |
+| simdjson | 5.8509 | 18.2607 | 11.8949 |
+| cysimdjson | 5.8934 | 13.6610 | 9.2341 |
+| yyjson | 6.1859 | 20.9625 | 13.0847 |
+| ujson | 10.1161 | 25.8113 | 16.7394 |
+| json | 21.5586 | 29.5351 | 25.5261 |
+| rapidjson | 23.2912 | 35.8780 | 29.4905 |
 
 ### Complete load of data/citm_catalog.json
 
-Sample file is 1727204 bytes.
+Sample file is 1727030 bytes.
 
 ![](histograms/-Complete_load_of_data_citm_catalog.json.svg 'Histogram for Complete load of data/citm_catalog.json.')
 
 | library | min (ms) | max (ms) | mean (ms) |
 | ------- | -------- | -------- | --------- |
-| msgspec | 3.0556 | 11.2726 | 4.4346 |
-| simdjson | 3.1650 | 15.4434 | 5.5860 |
-| cysimdjson | 3.3487 | 9.5261 | 4.6820 |
-| orjson | 3.5784 | 13.4451 | 5.3176 |
-| yyjson | 4.2500 | 16.7959 | 6.7714 |
-| rapidjson | 5.0066 | 13.0181 | 6.6638 |
-| ujson | 5.0782 | 15.5697 | 7.2611 |
-| json | 5.9400 | 12.4006 | 7.2006 |
-
+| orjson | 2.2132 | 13.0309 | 4.0447 |
+| yyjson | 2.6798 | 16.9011 | 5.3773 |
+| simdjson | 2.8619 | 14.8531 | 5.1441 |
+| msgspec | 2.8771 | 12.8378 | 4.5797 |
+| cysimdjson | 2.9870 | 9.5043 | 4.1598 |
+| rapidjson | 4.7399 | 16.4090 | 6.7940 |
+| ujson | 4.8417 | 18.3800 | 7.5532 |
+| json | 4.9740 | 13.3385 | 6.3111 |
 
 ### Complete load of data/twitter.json
 
-Sample file is 631514 bytes.
+Sample file is 567916 bytes.
 
 ![](histograms/-Complete_load_of_data_twitter.json.svg 'Histogram for Complete load of data/twitter.json.')
 
 | library | min (ms) | max (ms) | mean (ms) |
 | ------- | -------- | -------- | --------- |
-| msgspec | 1.0906 | 8.0987 | 1.2462 |
-| orjson | 1.1547 | 8.5405 | 1.3243 |
-| cysimdjson | 1.4119 | 6.1546 | 1.6388 |
-| simdjson | 1.4126 | 11.2883 | 1.6574 |
-| yyjson | 1.6139 | 12.2784 | 1.8747 |
-| rapidjson | 2.1710 | 10.8341 | 2.5329 |
-| json | 2.2981 | 8.2583 | 2.4406 |
-| ujson | 2.4385 | 12.0872 | 2.7202 |
-
+| orjson | 0.8338 | 10.9986 | 1.0194 |
+| yyjson | 0.9109 | 14.9827 | 1.1691 |
+| simdjson | 0.9728 | 12.3208 | 1.2150 |
+| msgspec | 1.0663 | 10.1131 | 1.2464 |
+| cysimdjson | 1.3475 | 8.0037 | 1.4957 |
+| rapidjson | 2.0265 | 12.8124 | 2.2311 |
+| json | 2.1085 | 10.1971 | 2.2773 |
+| ujson | 2.1985 | 15.9313 | 2.4921 |
 
 ### Complete load of data/verysmall.json
 
@@ -197,15 +201,14 @@ Sample file is 7 bytes.
 
 | library | min (ms) | max (ms) | mean (ms) |
 | ------- | -------- | -------- | --------- |
-| msgspec | 0.0001 | 0.0003 | 0.0001 |
-| orjson | 0.0001 | 0.0257 | 0.0002 |
-| yyjson | 0.0002 | 0.0251 | 0.0004 |
-| ujson | 0.0003 | 0.0009 | 0.0003 |
-| cysimdjson | 0.0003 | 0.0081 | 0.0004 |
-| simdjson | 0.0004 | 0.0015 | 0.0005 |
-| rapidjson | 0.0004 | 0.0011 | 0.0005 |
-| json | 0.0010 | 0.0062 | 0.0010 |
-
+| msgspec | 0.0001 | 0.0004 | 0.0001 |
+| orjson | 0.0001 | 0.0004 | 0.0001 |
+| simdjson | 0.0002 | 0.0015 | 0.0002 |
+| ujson | 0.0003 | 0.0023 | 0.0003 |
+| yyjson | 0.0003 | 0.0012 | 0.0003 |
+| rapidjson | 0.0003 | 0.0018 | 0.0003 |
+| cysimdjson | 0.0003 | 0.0079 | 0.0003 |
+| json | 0.0008 | 0.0103 | 0.0009 |
 
 ### Merge Patch
 
@@ -213,9 +216,8 @@ Sample file is 7 bytes.
 
 | library | min (ms) | max (ms) | mean (ms) |
 | ------- | -------- | -------- | --------- |
-| yyjson | 0.0003 | 0.0015 | 0.0003 |
-| json_merge_patch | 0.0005 | 0.0080 | 0.0005 |
-
+| yyjson | 0.0004 | 0.0014 | 0.0004 |
+| json_merge_patch | 0.0005 | 0.0033 | 0.0005 |
 
 <!-- end_performance_block -->
 

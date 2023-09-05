@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "json-benchmark"
+version = "0.1.0"
+description = ""
+authors = ["Tyler Kennedy <tk@tkte.ch>"]
+license = "Public Domain"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+cysimdjson = "^23.8"
+ujson = "^5.8.0"
+msgspec = "^0.18.2"
+yyjson = "^2.3.1"
+json-merge-patch = "^0.2"
+pytest = "^7.4.1"
+pytest-benchmark = "^4.0.0"
+pytest-memray = "^1.5.0"
+humanmark = "^0.5.1"
+python-rapidjson = "^1.10"
+pysimdjson = "^5.0.2"
+orjson = "^3.9.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

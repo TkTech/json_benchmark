@@ -17,7 +17,7 @@ To run the tests yourself:
 git clone git@github.com:TkTech/json_benchmark.git && cd json_benchmark
 <setup a virtualenv using your tool of choice>
 poetry install
-pytest --benchmark-json benchmark.json
+pytest --benchmark-json benchmark.json --benchmark-histogram histograms/
 ```
 
 To update the tables in the README.md with the new results, just run:

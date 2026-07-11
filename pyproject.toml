@@ -1,27 +1,35 @@
-[tool.poetry]
+[project]
 name = "json-benchmark"
 version = "0.1.0"
 description = ""
-authors = ["Tyler Kennedy <tk@tkte.ch>"]
-license = "Public Domain"
+authors = [
+    { name = "Tyler Kennedy", email = "tk@tkte.ch" }
+]
+license = { text = "Public Domain" }
+requires-python = ">=3.11"
 readme = "README.md"
 
-[tool.poetry.dependencies]
-python = "^3.11"
-cysimdjson = "^23.8"
-ujson = "^5.8.0"
-msgspec = "^0.18.2"
-yyjson = "^2.3.1"
-json-merge-patch = "^0.2"
-pytest = "^7.4.1"
-pytest-benchmark = {extras = ["histogram"], version = "^4.0.0"}
-pytest-memray = "^1.5.0"
-humanmark = "^0.5.1"
-python-rapidjson = "^1.10"
-pysimdjson = "^5.0.2"
-orjson = "^3.9.5"
+dependencies = [
+    "ujson>=5.10.0",
+    "msgspec>=0.19.0",
+    "yyjson>=5.0.0",
+    "ijson>=3.3.0",
+    "json-merge-patch>=0.2",
+    "pytest>=8.0.0",
+    "pytest-benchmark[histogram]>=5.0.0",
+    "pytest-memray>=1.7.0",
+    "humanmark>=0.5.1",
+    "python-rapidjson>=1.20",
+    # "pysimdjson>=5.0.2",
+    "pysimdjson",
+    "orjson>=3.10.0",
+    # humanmark (used by the report generators) still imports pkg_resources,
+    # which setuptools removed in 81. Keep it available (>=74.1 for building
+    # the local py_yyjson).
+    "setuptools>=74.1,<81"
+]
 
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+[tool.uv.sources]
+pysimdjson = { path = "../pysimdjson/" }
+# Test the local, unreleased py_yyjson (v5) with the new streaming/SAX reader.
+yyjson = { path = "../py_yyjson/" }

@@ -1,6 +1,6 @@
 # Minefield results for msgspec
 
-Generated 2023-09-04 22:25:30.921829.
+Generated 2026-07-11 10:08:20.281780.
 
 ## Summary
 

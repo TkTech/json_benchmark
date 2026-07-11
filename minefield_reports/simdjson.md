@@ -1,6 +1,6 @@
 # Minefield results for simdjson
 
-Generated 2023-09-04 22:25:30.911308.
+Generated 2026-07-11 10:08:20.269916.
 
 ## Summary
 
@@ -9,8 +9,8 @@ Generated 2023-09-04 22:25:30.911308.
 | 283 | 🎉 expected result |
 | 0 | 🔥 parsing should have failed but succeeded |
 | 0 | 🔥 parsing should have succeeded but failed |
-| 3 | ➕ result undefined, parsing succeeded |
-| 32 | ➖ result undefined, parsing failed |
+| 4 | ➕ result undefined, parsing succeeded |
+| 31 | ➖ result undefined, parsing failed |
 
 
 ### Complete Results
@@ -302,7 +302,7 @@ Generated 2023-09-04 22:25:30.911308.
 | data/minefield/n_array_double_comma.json | 🎉 expected result |
 | data/minefield/i_string_1st_valid_surrogate_2nd_invalid.json | ➖ result undefined, parsing failed |
 | data/minefield/i_number_double_huge_neg_exp.json | ➕ result undefined, parsing succeeded |
-| data/minefield/i_structure_UTF-8_BOM_empty_object.json | ➖ result undefined, parsing failed |
+| data/minefield/i_structure_UTF-8_BOM_empty_object.json | ➕ result undefined, parsing succeeded |
 | data/minefield/i_number_neg_int_huge_exp.json | ➖ result undefined, parsing failed |
 | data/minefield/i_string_lone_utf8_continuation_byte.json | ➖ result undefined, parsing failed |
 | data/minefield/i_string_lone_second_surrogate.json | ➖ result undefined, parsing failed |

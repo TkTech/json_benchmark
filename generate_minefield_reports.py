@@ -17,6 +17,20 @@ def do_yyjson(content):
     yyjson.Document(content)
 
 
+def do_yyjson_sax(content):
+    import yyjson
+    # An empty handler still fully parses and validates, raising on invalid
+    # input, so this exercises the streaming reader's accept/reject behaviour.
+    yyjson.sax(content.encode('utf-8'), object())
+
+
+def do_ijson(content):
+    import ijson
+    # Draining the event stream forces a full parse; invalid JSON raises.
+    for _event in ijson.basic_parse(content.encode('utf-8')):
+        pass
+
+
 def do_rapidjson(content):
     import rapidjson
     rapidjson.loads(content)
@@ -96,11 +110,13 @@ def main(argv):
 
     runners = [
         ('yyjson', do_yyjson),
+        ('yyjson-sax', do_yyjson_sax),
         ('rapidjson', do_rapidjson),
         ('orjson', do_orjson),
         ('simdjson', do_simdjson),
         ('ujson', do_ujson),
         ('msgspec', do_msgspec),
+        ('ijson', do_ijson),
     ]
 
     readme_summary = Fragment()

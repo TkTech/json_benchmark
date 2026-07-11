@@ -3,9 +3,8 @@ import pytest
 parser = pytest.importorskip('simdjson')
 
 
-def parse_document(p, document, path, content):
-    doc = p.parse(content, document)
-    doc.as_object
+def parse_document(path, content):
+    parser.loads(content)
 
 
 def test_full_document_read(benchmark, sample_json):
@@ -17,6 +16,4 @@ def test_full_document_read(benchmark, sample_json):
     benchmark.name = 'simdjson'
     benchmark.extra_info['file'] = sample_json[0]
     benchmark.extra_info['file_size'] = len(sample_json[1])
-    p = parser.Parser()
-    document = parser.Document()
-    benchmark(parse_document, p, document, *sample_json)
+    benchmark(parse_document, *sample_json)

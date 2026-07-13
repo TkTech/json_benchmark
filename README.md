@@ -3,7 +3,7 @@
 <!-- start_last_updated_block -->
 
 
-> :grey_exclamation: Benchmarks regenerated on 2026-07-11
+> :grey_exclamation: Benchmarks regenerated on 2026-07-13
 
 <!-- end_last_updated_block -->
 
@@ -71,7 +71,6 @@ See full minefield results for [yyjson](minefield_reports/yyjson.md).
 | 6 | ➕ result undefined, parsing succeeded |
 | 29 | ➖ result undefined, parsing failed |
 
-
 ### yyjson-sax
 
 See full minefield results for [yyjson-sax](minefield_reports/yyjson-sax.md).
@@ -83,7 +82,6 @@ See full minefield results for [yyjson-sax](minefield_reports/yyjson-sax.md).
 | 0 | 🔥 parsing should have succeeded but failed |
 | 6 | ➕ result undefined, parsing succeeded |
 | 29 | ➖ result undefined, parsing failed |
-
 
 ### rapidjson
 
@@ -97,7 +95,6 @@ See full minefield results for [rapidjson](minefield_reports/rapidjson.md).
 | 6 | ➕ result undefined, parsing succeeded |
 | 29 | ➖ result undefined, parsing failed |
 
-
 ### orjson
 
 See full minefield results for [orjson](minefield_reports/orjson.md).
@@ -109,7 +106,6 @@ See full minefield results for [orjson](minefield_reports/orjson.md).
 | 0 | 🔥 parsing should have succeeded but failed |
 | 6 | ➕ result undefined, parsing succeeded |
 | 29 | ➖ result undefined, parsing failed |
-
 
 ### simdjson
 
@@ -123,7 +119,6 @@ See full minefield results for [simdjson](minefield_reports/simdjson.md).
 | 4 | ➕ result undefined, parsing succeeded |
 | 31 | ➖ result undefined, parsing failed |
 
-
 ### ujson
 
 See full minefield results for [ujson](minefield_reports/ujson.md).
@@ -135,7 +130,6 @@ See full minefield results for [ujson](minefield_reports/ujson.md).
 | 0 | 🔥 parsing should have succeeded but failed |
 | 21 | ➕ result undefined, parsing succeeded |
 | 14 | ➖ result undefined, parsing failed |
-
 
 ### msgspec
 
@@ -149,7 +143,6 @@ See full minefield results for [msgspec](minefield_reports/msgspec.md).
 | 6 | ➕ result undefined, parsing succeeded |
 | 29 | ➖ result undefined, parsing failed |
 
-
 ### ijson
 
 See full minefield results for [ijson](minefield_reports/ijson.md).
@@ -161,7 +154,6 @@ See full minefield results for [ijson](minefield_reports/ijson.md).
 | 0 | 🔥 parsing should have succeeded but failed |
 | 16 | ➕ result undefined, parsing succeeded |
 | 19 | ➖ result undefined, parsing failed |
-
 
 <!-- end_correct_block -->
 
@@ -181,8 +173,9 @@ Sample file is 2251051 bytes.
 
 | library | min (ms) | max (ms) | mean (ms) |
 | ------- | -------- | -------- | --------- |
-| yyjson | 8.8950 | 13.4254 | 9.5058 |
-| ijson (yajl2_c) | 24.3511 | 28.3819 | 25.3745 |
+| yyjson | 8.6970 | 9.3007 | 8.8893 |
+| ijson (yajl2_c) | 22.6858 | 23.8652 | 23.1013 |
+
 
 ### Streaming parse of data/citm_catalog.json
 
@@ -192,8 +185,9 @@ Sample file is 1727204 bytes.
 
 | library | min (ms) | max (ms) | mean (ms) |
 | ------- | -------- | -------- | --------- |
-| yyjson | 3.7303 | 5.7675 | 4.0534 |
-| ijson (yajl2_c) | 7.0771 | 10.9903 | 7.8962 |
+| yyjson | 3.3277 | 4.8824 | 3.7323 |
+| ijson (yajl2_c) | 6.3018 | 8.5975 | 6.9487 |
+
 
 ### Streaming parse of data/twitter.json
 
@@ -203,8 +197,9 @@ Sample file is 631514 bytes.
 
 | library | min (ms) | max (ms) | mean (ms) |
 | ------- | -------- | -------- | --------- |
-| yyjson | 1.9840 | 2.6766 | 2.0886 |
-| ijson (yajl2_c) | 3.1829 | 5.3100 | 3.3930 |
+| yyjson | 1.7940 | 2.0859 | 1.8278 |
+| ijson (yajl2_c) | 2.8267 | 5.3436 | 2.9626 |
+
 
 ### Streaming parse of data/verysmall.json
 
@@ -214,8 +209,57 @@ Sample file is 7 bytes.
 
 | library | min (ms) | max (ms) | mean (ms) |
 | ------- | -------- | -------- | --------- |
-| yyjson | 0.0010 | 0.1257 | 0.0011 |
-| ijson (yajl2_c) | 0.0037 | 0.0286 | 0.0041 |
+| yyjson | 0.0011 | 0.0212 | 0.0012 |
+| ijson (yajl2_c) | 0.0037 | 0.1267 | 0.0039 |
+
+
+### Streaming parse of data/fgo.json
+
+Sample file is 48765043 bytes.
+
+![](histograms/-Streaming_parse_of_data_fgo.json.svg 'Histogram for Streaming parse of data/fgo.json.')
+
+| library | min (ms) | max (ms) | mean (ms) |
+| ------- | -------- | -------- | --------- |
+| yyjson | 315.4146 | 319.3040 | 317.5809 |
+| ijson (yajl2_c) | 495.1035 | 505.1622 | 499.9637 |
+
+
+### Streaming parse of data/otfcc.json
+
+Sample file is 66409302 bytes.
+
+![](histograms/-Streaming_parse_of_data_otfcc.json.svg 'Histogram for Streaming parse of data/otfcc.json.')
+
+| library | min (ms) | max (ms) | mean (ms) |
+| ------- | -------- | -------- | --------- |
+| yyjson | 646.0111 | 659.2554 | 651.9847 |
+| ijson (yajl2_c) | 1020.1002 | 1032.1442 | 1027.0863 |
+
+
+### Streaming parse of data/poet.json
+
+Sample file is 3512883 bytes.
+
+![](histograms/-Streaming_parse_of_data_poet.json.svg 'Histogram for Streaming parse of data/poet.json.')
+
+| library | min (ms) | max (ms) | mean (ms) |
+| ------- | -------- | -------- | --------- |
+| yyjson | 7.6482 | 11.5492 | 7.8543 |
+| ijson (yajl2_c) | 9.3670 | 9.6594 | 9.5128 |
+
+
+### Streaming parse of data/gsoc-2018.json
+
+Sample file is 3327831 bytes.
+
+![](histograms/-Streaming_parse_of_data_gsoc-2018.json.svg 'Histogram for Streaming parse of data/gsoc-2018.json.')
+
+| library | min (ms) | max (ms) | mean (ms) |
+| ------- | -------- | -------- | --------- |
+| yyjson | 4.7380 | 5.4931 | 4.8932 |
+| ijson (yajl2_c) | 5.1025 | 5.9048 | 5.2717 |
+
 
 ### Complete load of data/canada.json
 
@@ -225,13 +269,14 @@ Sample file is 2251051 bytes.
 
 | library | min (ms) | max (ms) | mean (ms) |
 | ------- | -------- | -------- | --------- |
-| orjson | 5.6353 | 20.3192 | 12.0326 |
-| yyjson | 6.0868 | 24.8159 | 13.6109 |
-| msgspec | 6.2057 | 18.5555 | 11.4317 |
-| simdjson | 6.7152 | 22.1631 | 13.2035 |
-| ujson | 10.6807 | 27.6078 | 18.3567 |
-| json | 23.4137 | 35.6167 | 28.4750 |
-| rapidjson | 23.4955 | 35.5762 | 29.5386 |
+| yyjson | 4.4991 | 6.7486 | 4.8984 |
+| orjson | 6.0146 | 20.8946 | 12.1758 |
+| msgspec | 6.6082 | 27.9779 | 15.5113 |
+| simdjson | 7.2701 | 20.6712 | 14.5211 |
+| ujson | 11.1293 | 25.2489 | 18.3757 |
+| json | 23.8417 | 34.6569 | 28.9730 |
+| rapidjson | 24.6718 | 39.5648 | 32.8370 |
+
 
 ### Complete load of data/citm_catalog.json
 
@@ -241,13 +286,14 @@ Sample file is 1727030 bytes.
 
 | library | min (ms) | max (ms) | mean (ms) |
 | ------- | -------- | -------- | --------- |
-| orjson | 2.2924 | 17.2998 | 4.7394 |
-| msgspec | 2.9279 | 16.1749 | 4.7772 |
-| yyjson | 3.0563 | 20.5972 | 6.2553 |
-| simdjson | 3.2246 | 19.1667 | 5.8622 |
-| ujson | 4.2557 | 26.9695 | 7.4381 |
-| rapidjson | 4.3142 | 20.1385 | 6.9346 |
-| json | 6.1490 | 14.7257 | 7.6981 |
+| yyjson | 1.7838 | 3.2357 | 1.9707 |
+| orjson | 2.4194 | 13.5199 | 4.6141 |
+| msgspec | 3.0889 | 21.4627 | 6.3947 |
+| simdjson | 3.3927 | 16.4161 | 6.1467 |
+| ujson | 4.4742 | 19.0578 | 7.3929 |
+| rapidjson | 4.5165 | 21.7992 | 7.4734 |
+| json | 6.2320 | 14.9818 | 7.9924 |
+
 
 ### Complete load of data/twitter.json
 
@@ -257,13 +303,14 @@ Sample file is 567916 bytes.
 
 | library | min (ms) | max (ms) | mean (ms) |
 | ------- | -------- | -------- | --------- |
-| orjson | 0.7891 | 13.3578 | 1.0326 |
-| msgspec | 1.0239 | 12.2415 | 1.2897 |
-| yyjson | 1.2202 | 18.0516 | 1.6326 |
-| simdjson | 1.3748 | 15.9009 | 1.6798 |
-| ujson | 1.6601 | 14.2774 | 2.0449 |
-| rapidjson | 1.8364 | 13.6781 | 2.0960 |
-| json | 2.6590 | 10.6174 | 2.8569 |
+| orjson | 0.8095 | 13.5349 | 1.1043 |
+| yyjson | 0.8694 | 1.5064 | 0.9441 |
+| msgspec | 1.0577 | 17.2088 | 1.4776 |
+| simdjson | 1.3933 | 14.9575 | 1.7529 |
+| ujson | 1.6982 | 14.8908 | 2.1086 |
+| rapidjson | 1.8627 | 15.8346 | 2.2719 |
+| json | 2.6851 | 13.7934 | 2.9656 |
+
 
 ### Complete load of data/verysmall.json
 
@@ -273,13 +320,82 @@ Sample file is 7 bytes.
 
 | library | min (ms) | max (ms) | mean (ms) |
 | ------- | -------- | -------- | --------- |
-| msgspec | 0.0001 | 0.0013 | 0.0001 |
-| orjson | 0.0001 | 0.0004 | 0.0001 |
-| yyjson | 0.0002 | 0.0059 | 0.0003 |
-| rapidjson | 0.0003 | 0.0015 | 0.0003 |
-| ujson | 0.0003 | 0.0028 | 0.0003 |
-| simdjson | 0.0004 | 0.0026 | 0.0004 |
-| json | 0.0008 | 0.0412 | 0.0009 |
+| msgspec | 0.0001 | 0.0039 | 0.0001 |
+| yyjson | 0.0001 | 0.0025 | 0.0001 |
+| orjson | 0.0001 | 0.0017 | 0.0001 |
+| rapidjson | 0.0003 | 0.0017 | 0.0003 |
+| ujson | 0.0003 | 0.0043 | 0.0003 |
+| simdjson | 0.0004 | 0.0098 | 0.0004 |
+| json | 0.0008 | 0.0049 | 0.0008 |
+
+
+### Complete load of data/fgo.json
+
+Sample file is 45690911 bytes.
+
+![](histograms/-Complete_load_of_data_fgo.json.svg 'Histogram for Complete load of data/fgo.json.')
+
+| library | min (ms) | max (ms) | mean (ms) |
+| ------- | -------- | -------- | --------- |
+| yyjson | 226.2088 | 239.0445 | 230.9776 |
+| orjson | 470.7608 | 544.2078 | 507.9765 |
+| msgspec | 474.9090 | 539.3030 | 508.0502 |
+| rapidjson | 607.6599 | 671.6313 | 642.6487 |
+| json | 658.0721 | 700.5949 | 674.1365 |
+| ujson | 795.8875 | 926.3975 | 873.1998 |
+| simdjson | 852.5420 | 919.4318 | 881.5412 |
+
+
+### Complete load of data/otfcc.json
+
+Sample file is 66409251 bytes.
+
+![](histograms/-Complete_load_of_data_otfcc.json.svg 'Histogram for Complete load of data/otfcc.json.')
+
+| library | min (ms) | max (ms) | mean (ms) |
+| ------- | -------- | -------- | --------- |
+| yyjson | 559.2589 | 575.5079 | 570.1669 |
+| msgspec | 1051.5780 | 1180.5235 | 1115.4705 |
+| orjson | 1105.1228 | 1175.1532 | 1142.0121 |
+| ujson | 1286.0061 | 1469.6067 | 1364.5810 |
+| rapidjson | 1296.9691 | 1427.1810 | 1359.3918 |
+| simdjson | 1357.0520 | 1529.2694 | 1430.5631 |
+| json | 1572.2035 | 1680.6050 | 1615.5561 |
+
+
+### Complete load of data/poet.json
+
+Sample file is 1707203 bytes.
+
+![](histograms/-Complete_load_of_data_poet.json.svg 'Histogram for Complete load of data/poet.json.')
+
+| library | min (ms) | max (ms) | mean (ms) |
+| ------- | -------- | -------- | --------- |
+| orjson | 4.4288 | 5.2035 | 4.5914 |
+| yyjson | 4.6131 | 5.3194 | 4.7907 |
+| msgspec | 4.7112 | 6.7624 | 5.3332 |
+| simdjson | 5.2242 | 6.5857 | 5.4582 |
+| ujson | 5.7027 | 8.0437 | 6.4811 |
+| json | 6.3685 | 9.7802 | 7.2586 |
+| rapidjson | 7.4218 | 8.2376 | 7.6006 |
+
+
+### Complete load of data/gsoc-2018.json
+
+Sample file is 3327831 bytes.
+
+![](histograms/-Complete_load_of_data_gsoc-2018.json.svg 'Histogram for Complete load of data/gsoc-2018.json.')
+
+| library | min (ms) | max (ms) | mean (ms) |
+| ------- | -------- | -------- | --------- |
+| msgspec | 2.5023 | 14.6973 | 3.0122 |
+| yyjson | 2.5452 | 3.1216 | 2.6679 |
+| simdjson | 2.8363 | 17.3013 | 3.2583 |
+| orjson | 3.5744 | 14.2182 | 3.7913 |
+| rapidjson | 4.3007 | 17.6994 | 4.7676 |
+| json | 4.4708 | 16.9558 | 5.2436 |
+| ujson | 4.6627 | 22.6703 | 5.6661 |
+
 
 ### Merge Patch
 
@@ -287,8 +403,9 @@ Sample file is 7 bytes.
 
 | library | min (ms) | max (ms) | mean (ms) |
 | ------- | -------- | -------- | --------- |
-| json_merge_patch | 0.0004 | 0.0224 | 0.0005 |
-| yyjson | 0.0008 | 0.0272 | 0.0009 |
+| json_merge_patch | 0.0005 | 0.0803 | 0.0007 |
+| yyjson | 0.0010 | 0.0277 | 0.0011 |
+
 
 <!-- end_performance_block -->
 

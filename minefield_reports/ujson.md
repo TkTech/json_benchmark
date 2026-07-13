@@ -1,6 +1,6 @@
 # Minefield results for ujson
 
-Generated 2026-07-11 10:08:20.274591.
+Generated 2026-07-12 20:35:24.330908.
 
 ## Summary
 

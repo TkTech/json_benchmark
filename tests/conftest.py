@@ -5,7 +5,14 @@ SAMPLE_FILES = [
     'data/canada.json',
     'data/citm_catalog.json',
     'data/twitter.json',
-    'data/verysmall.json'
+    'data/verysmall.json',
+    # From the yyjson_benchmark corpus (github.com/ibireme/yyjson_benchmark):
+    # two genuinely large documents plus two mid-size ones that add shape
+    # diversity (poet.json is CJK-string-heavy).
+    'data/fgo.json',
+    'data/otfcc.json',
+    'data/poet.json',
+    'data/gsoc-2018.json',
 ]
 
 
